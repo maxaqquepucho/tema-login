@@ -1,0 +1,192 @@
+
+
+:root {
+
+    /*GLOBALES*/
+    --color-tema-global: rgb(79, 136, 203);
+    --color-tema-global-sombra: rgb(79, 136, 203,.5);
+    --color-tema-global-letraHeader:  rgb(79, 136, 203,.9);
+
+    /*SUB GLOBALES*/
+    --color-tema-subGlobal: #999999;
+    --color-sombra-hover: rgb(51, 51, 51);
+    --color-sombra-hover-transparencia: rgba(51, 51, 51, 0.5);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.contenedor {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+.validate-input {
+  position: relative;
+}
+.fila {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.columna {
+    margin-top: 7%;
+}
+.grupo-input {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--color-tema-subGlobal);
+}
+.grupo-input > span {
+    font-size: 21px; color: var(--color-tema-subGlobal);
+    width: 10%; align-self:center;
+}
+.grupo-input  div {
+    width: 90%;
+}
+.input100 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px; line-height: 1.2;
+  color: #555555; outline: none;
+  border: none; display: block;
+  width: 100%;  height: 50px;
+  background: transparent;
+  padding: 0 5px;
+}
+
+/*---------------------------------------------*/
+.focus-input100 {
+  pointer-events: none;
+}
+
+.focus-input100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+
+  transition: all 0.4s;
+  background: var(--color-tema-global);
+}
+
+.focus-input100::after {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  color: var(--color-tema-subGlobal);
+  line-height: 1.2;
+
+  content: attr(data-placeholder);
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 15px;
+  padding-left: 5px;
+  transition: all 0.4s;
+}
+.input100:focus + .focus-input100::after {
+  top: -10px;
+  font-size: 15px;
+}
+.input100:focus + .focus-input100::before {
+  width: 90%;
+}
+.has-val.input100 + .focus-input100::after {
+  top: -10px;
+  font-size: 15px;
+}
+.has-val.input100 + .focus-input100::before {
+  width: 90%;
+}
+
+/*BOTON ===============================  */
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-login100-form-btn {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.login100-form-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 50px;
+  background-color: var(--color-tema-global);
+  border-radius: 25px;
+  box-shadow: 0 10px 30px 0px var(--color-tema-global-sombra);
+  transition: all 0.4s;
+}
+.login100-form-btn:hover  {
+  background-color: var(--color-sombra-hover);
+  box-shadow: 0 10px 30px 0px var(--color-sombra-hover-transparencia);
+}
+.passReset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 30px;
+}
+.passReset  a {
+    text-decoration: none;
+    color: var(--color-tema-subGlobal);
+    position: relative;
+    top:  10px;
+}
+.passReset  a:hover {
+    text-decoration: underline;
+}
+.contenido-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenido-header-sub {
+    display: flex;
+    flex-direction: column;
+    align-content:  center;
+    margin: 30px;
+}
+.contenido-header-sub span {
+    text-align: center;
+    color: var(--color-tema-global-letraHeader) ;
+}
+@media only screen and (min-width: 600px) {
+    .columna {
+        margin-top: 3%;
+    }
+}
